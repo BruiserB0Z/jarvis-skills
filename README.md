@@ -29,6 +29,10 @@ Swap in `homelab-docker-ops` or `wazuh-ops` for the others. Read a skill before 
 
 Every push runs ChiefGyk3D's [git-your-ship-together](https://github.com/ChiefGyk3D/git-your-ship-together) workflows, pinned to an exact commit: a secret scan over the full history now, and code scanning once the repository is public. If you find a problem, open an issue, or use GitHub's private vulnerability reporting for anything sensitive.
 
+## Thanks
+
+To [ChiefGyk3D](https://github.com/ChiefGyk3D), whose open-source security work shaped how this repository is checked and how `vet-before-install` thinks about pinning and supply chains. [git-your-ship-together](https://github.com/ChiefGyk3D/git-your-ship-together) runs the security checks on every push here, and [Typo Sniper](https://github.com/ChiefGyk3D/typo-sniper) keeps watch for lookalike domains. Both are worth a look.
+
 ## Licence
 
 MIT. See [LICENSE](LICENSE).
