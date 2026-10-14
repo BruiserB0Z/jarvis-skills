@@ -31,11 +31,5 @@ jobs:
       codeql-languages: actions
       pip-audit-requirements: ""
       egress-policy: block
-      # While the repository is private on GitHub Free there is no code
-      # scanning to upload to, so only the secret scan runs, without its
-      # upload. When the repository goes public, set these four to true
-      # (or delete the four lines; true is the default).
-      codeql: false
-      semgrep: false
-      dependency-review: false
-      gitleaks-upload-sarif: false
+      # The repository is public, so CodeQL, Semgrep, dependency review and
+      # the gitleaks upload to code scanning all run (each is on by default).
