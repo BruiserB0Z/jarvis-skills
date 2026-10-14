@@ -1,0 +1,10 @@
+# Each skill reads its owner's own facts from references/site.md. Those files
+# describe a real installation (addresses, names, decisions) and are never
+# published, from this repository or any copy of it.
+site.md
+**/references/site.md
+
+# Operating-system clutter
+Thumbs.db
+desktop.ini
+.DS_Store

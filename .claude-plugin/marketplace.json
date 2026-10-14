@@ -1,0 +1,24 @@
+{
+  "name": "bruiserb0z-jarvis",
+  "description": "Claude Code skills for small self-hosted setups: Docker hosts, Wazuh, and vetting what you install.",
+  "owner": {
+    "name": "BruiserB0Z"
+  },
+  "plugins": [
+    {
+      "name": "homelab-docker-ops",
+      "source": "./plugins/homelab-docker-ops",
+      "description": "Run, fix and update other people's containers on a small self-hosted Docker host without the quiet failures."
+    },
+    {
+      "name": "wazuh-ops",
+      "source": "./plugins/wazuh-ops",
+      "description": "Operate a small Wazuh deployment as its analyst and its administrator: triage, rules, testing, health and upgrades."
+    },
+    {
+      "name": "vet-before-install",
+      "source": "./plugins/vet-before-install",
+      "description": "Vet a skill, plugin, MCP server, editor extension or GitHub Action before it is installed."
+    }
+  ]
+}

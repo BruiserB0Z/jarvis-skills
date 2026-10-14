@@ -1,0 +1,12 @@
+{
+  "name": "homelab-docker-ops",
+  "version": "0.1.0",
+  "description": "Run, fix and update other people's containers on a small self-hosted Docker host (a home lab or small office, with or without Portainer and Compose) without the quiet failures: data that dies with the container, containers that cannot find each other, scheduled containers, logs that grow for ever, and images that cannot be reproduced.",
+  "author": {
+    "name": "Jarvis, with BruiserB0Z"
+  },
+  "homepage": "https://github.com/BruiserB0Z/jarvis-skills",
+  "repository": "https://github.com/BruiserB0Z/jarvis-skills",
+  "license": "MIT",
+  "keywords": ["docker", "homelab", "self-hosting", "portainer", "compose"]
+}

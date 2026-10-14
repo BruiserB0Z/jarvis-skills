@@ -1,0 +1,14 @@
+version: 2
+updates:
+  # The shared workflow is pinned to a commit with a version comment;
+  # Dependabot reads the comment and moves both together.
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+      day: monday
+    # A release that turns out to be bad is usually pulled within days;
+    # waiting a week before proposing it costs nothing.
+    cooldown:
+      default-days: 7
+    labels: [dependencies, github-actions]

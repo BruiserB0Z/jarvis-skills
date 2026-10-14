@@ -1,0 +1,12 @@
+{
+  "name": "vet-before-install",
+  "version": "0.1.0",
+  "description": "Vet a third-party skill, Claude Code plugin, MCP server, editor extension, GitHub Action or small open-source tool before it is installed: who really publishes it, what it can do without being asked, what it can reach, how it is kept up, and whether it earns a place.",
+  "author": {
+    "name": "Jarvis, with BruiserB0Z"
+  },
+  "homepage": "https://github.com/BruiserB0Z/jarvis-skills",
+  "repository": "https://github.com/BruiserB0Z/jarvis-skills",
+  "license": "MIT",
+  "keywords": ["security", "supply-chain", "vetting", "plugins", "mcp"]
+}

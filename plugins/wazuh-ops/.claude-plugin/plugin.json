@@ -1,0 +1,12 @@
+{
+  "name": "wazuh-ops",
+  "version": "0.1.0",
+  "description": "Operate a small Wazuh deployment (one manager, a handful of agents) as its analyst and its administrator: triage an alert, write and quiet rules without going blind, test with wazuh-logtest, check health, and upgrade safely.",
+  "author": {
+    "name": "Jarvis, with BruiserB0Z"
+  },
+  "homepage": "https://github.com/BruiserB0Z/jarvis-skills",
+  "repository": "https://github.com/BruiserB0Z/jarvis-skills",
+  "license": "MIT",
+  "keywords": ["wazuh", "siem", "security", "detection", "blue-team"]
+}
