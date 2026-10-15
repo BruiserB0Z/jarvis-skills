@@ -20,3 +20,4 @@ Each of these is from running one small installation. They held there; check the
 - "Manager first, agents never newer than the manager": the usual Wazuh compatibility rule, not re-read on 2026-10-12.
 - The service start order and `dpkg --audit` as a health check.
 - "Logtest proves the rule, not delivery", the paired quiet-and-loud rule pattern, and the warning about closing a terminal during an upgrade.
+- The Dashboards section and everything in `references/dashboards.md`: found by use on 4.14.8 (dashboard on OpenSearch Dashboards 2.19.6) in October 2026, while building and importing the two examples. The severity bands (0 to 6, 7 to 11, 12 and up) are this skill's choice; level 12 lines up with the classification page's "high importance event".

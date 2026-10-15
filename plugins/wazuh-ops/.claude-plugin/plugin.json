@@ -1,6 +1,6 @@
 {
   "name": "wazuh-ops",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Operate a small Wazuh deployment (one manager, a handful of agents) as its analyst and its administrator: triage an alert, write and quiet rules without going blind, test with wazuh-logtest, check health, and upgrade safely.",
   "author": {
     "name": "Jarvis, with BruiserB0Z"

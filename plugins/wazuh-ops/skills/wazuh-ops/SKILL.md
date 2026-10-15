@@ -1,6 +1,6 @@
 ---
 name: wazuh-ops
-description: Operate a small Wazuh deployment (one manager, a handful of agents) as its analyst and its administrator - triage an alert, decide whether it is a false positive, write or tune custom rules and decoders, quiet noise without going blind, test with wazuh-logtest, check health after a reboot or an upgrade, upgrade the manager and agents safely, and reach the server API through the dashboard when there is no API user. Use this skill whenever Wazuh comes up at all - an alert someone does not recognise, "is this one real?", a rule ID, a level, an agent that looks disconnected, a noisy dashboard, a new log source that produces no alerts, a planned Wazuh update, or any change to rules, decoders or ossec.conf. Use it before answering from memory, because Wazuh's behaviour is specific (rule ID ranges, what survives an upgrade, what logtest does and does not prove) and a confident guess here either hides a real alert or buries the owner in false ones.
+description: Operate a small Wazuh deployment (one manager, a handful of agents) as its analyst and its administrator - triage an alert, decide whether it is a false positive, write or tune custom rules and decoders, quiet noise without going blind, test with wazuh-logtest, check health after a reboot or an upgrade, upgrade the manager and agents safely, and reach the server API through the dashboard when there is no API user. Use this skill whenever Wazuh comes up at all - an alert someone does not recognise, "is this one real?", a rule ID, a level, an agent that looks disconnected, a noisy dashboard, a dashboard to build, import or share, a new log source that produces no alerts, a planned Wazuh update, or any change to rules, decoders or ossec.conf. Use it before answering from memory, because Wazuh's behaviour is specific (rule ID ranges, what survives an upgrade, what logtest does and does not prove) and a confident guess here either hides a real alert or buries the owner in false ones.
 ---
 
 # Wazuh operations
@@ -97,7 +97,21 @@ Load the password straight into the call that uses it. Never print it, the login
 - Scanner traffic against a web server (bursts of 404s and 403s) is weather. It matters when a source gets a 200 where it should not.
 - If one rule produces most of the dashboard, find out what it is reacting to before lowering it. The usual answer is a scheduled job or an administrator's own routine, which calls for a narrow child rule.
 
+## Dashboards
+
+A dashboard earns its place by answering a question someone asks often: "is anything serious?", "what is making the noise?". Build on standard alert fields, so it survives an upgrade and works on another install.
+
+- **Two examples ship with this skill,** in `assets/dashboards/`: `morning-check.ndjson` (the last day: anything serious, what is noisy, which files changed, who logged in) and `noise-finder.ndjson` (the last week: which rules fill the feed, on which agents, and when). Import them under Dashboards Management, Saved objects, Import. They expect the stock index pattern whose ID is `wazuh-alerts-*`. How they were built, and how to build and share your own: `references/dashboards.md`.
+- **Split a chart by `rule.id`, not `rule.description`.** Some descriptions carry the event's own values (an address, a user name), and then every event becomes its own series.
+- **Rank before you slice.** In a "top five over time" chart, the top-five split must come before the date histogram. The other way round, each time slot picks its own top five and the legend fills with dozens of rules.
+- **Severity bands are queries with labels, not colours alone.** The examples use low (level 0 to 6), medium (7 to 11) and high (12 and up), each named in the legend, so the meaning survives a colour-blind reader and a printout.
+- **An empty panel is an answer.** "No results" on failed logins is good news. Check the time range before calling it broken.
+- **Look at the result.** A saved object that imports cleanly can still draw nonsense. Open the dashboard and read every panel before calling it done.
+- **Share the definition, never a screenshot of a live dashboard.** A screenshot shows agent names, addresses and file paths. An exported file holds only the definitions; read it for names anyway before it leaves the building.
+
 ## References
 
 - `references/site.md` - this installation: manager, access, agents, custom rule files and ID blocks, known false positives, the owner's decisions. Read first. Private to the site; leave it out of anything shared.
 - `references/official-docs.md` - the pages of Wazuh's own documentation the rules above rest on, and which statements here come from experience instead.
+- `references/dashboards.md` - building, exporting, importing and checking dashboards, and what each example panel shows.
+- `assets/dashboards/` - the two example dashboards, as importable saved-object files.
