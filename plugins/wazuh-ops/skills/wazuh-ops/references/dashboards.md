@@ -4,9 +4,9 @@ Found by use on Wazuh 4.14.8, whose dashboard reports OpenSearch Dashboards 2.19
 
 ## The two examples
 
-Every panel uses fields every Wazuh alert carries (`rule.*`, `agent.name`, `timestamp`), plus `syscheck.*` and `data.srcip` where those modules report. The object IDs start with `wazuh-ops-mc-` and `wazuh-ops-nf-`, so they cannot collide with anything already on an install.
+Every panel uses fields every Wazuh alert carries (`rule.*`, `agent.name`, `timestamp`), plus `syscheck.*` and `data.srcip` where those modules report. The object IDs start with `wazuh-ops-mc-` and `wazuh-ops-nf-`, so they cannot collide with anything already on an install. The files are in the repository's `extras/wazuh-ops-dashboards/` folder (https://github.com/BruiserB0Z/jarvis-skills/tree/main/extras/wazuh-ops-dashboards), not in the plugin: the plugin directory doesn't accept that file type from individual publishers.
 
-**Morning check** (`assets/dashboards/morning-check.ndjson`, opens on the last 24 hours)
+**Morning check** (`morning-check.ndjson`, opens on the last 24 hours)
 
 | Panel | What it answers |
 |---|---|
@@ -18,7 +18,7 @@ Every panel uses fields every Wazuh alert carries (`rule.*`, `agent.name`, `time
 | Files that changed (integrity monitoring) | Query `rule.groups:syscheck`: the file, the agent, the kind of change. |
 | Logins, good and failed | Query `rule.groups:authentication_success or rule.groups:authentication_failed`: the event, the agent, the source address. Often empty, which is good news. |
 
-**Noise finder** (`assets/dashboards/noise-finder.ndjson`, opens on the last 7 days)
+**Noise finder** (`noise-finder.ndjson`, opens on the last 7 days)
 
 | Panel | What it answers |
 |---|---|
